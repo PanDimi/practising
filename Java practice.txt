@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+    public static final double overdraw_penalty=8.00;
+    public static final double interest_rate=0.02;
+    public static void main (String[]args){
+        double balance;
+        Scanner keyboard=new Scanner(System.in);
+        System.out.println("give account balance: ");
+        balance= keyboard.nextDouble();
+        if(balance>=0){
+            balance=balance*((interest_rate*balance)/12);
+            System.out.println("exeis bonus 2% + balance");
+        }
+            else{
+                balance=balance-overdraw_penalty;
+                System.out.println("exeis penalty - 8.00" + balance);
+        }
+
+
+    }
+
+}
